@@ -3,8 +3,6 @@
 	import '../../app.css';
 
 	export let data: PageData;
-	let hidefi = false;
-	let hidesv = false;
 	let list = data.list.map((s: any) => ({ fi: { text: s.fi }, sv: { text: s.sv } }));
 
 	function onKD(e: KeyboardEvent, item: any) {
@@ -29,10 +27,10 @@
 	<div class="flex justify-center">
 		<div class="grid grid-cols-2 gap-3 pb-10">
 			<div class="bg-white/80 p-1 rounded">
-				<input type="checkbox" on:change={onHideFi} /> suomi
+				<input type="checkbox" on:change={onHideFi} /> <b>suomi</b>
 			</div>
 			<div class="bg-white/80 p-1 rounded">
-				<input type="checkbox" on:change={onHideSv} /> svenska
+				<input type="checkbox" on:change={onHideSv} /> <b>>svenska</b>
 			</div>
 			{#each list as word, i}
 				<div

@@ -1,4 +1,4 @@
-import { otavaHeaders, otavaRestOfTheURL } from '$lib/fetch-headers';
+import { OTAVA_COOKIE, OTAVA_REST_URL } from '$env/static/private';
 import type { PageServerLoad } from './$types';
 
 export const prerender = true;
@@ -67,9 +67,24 @@ async function getQuizlet(url: string) {
 function legitFetchOtava(url: string) {
 	const page = url.slice(url.lastIndexOf('/') + 1);
 	return fetch(
-		`https://materiaalit.otava.fi/o/library-file-type-action/render?page=${page}${otavaRestOfTheURL}`,
+		`https://materiaalit.otava.fi/o/library-file-type-action/render?page=${page}${OTAVA_REST_URL}`,
 		{
-			headers: otavaHeaders,
+			headers: {
+				accept: 'text/html, */*; q=0.01',
+				'accept-language': 'fi-FI,fi;q=0.9,en-US;q=0.8,en;q=0.7',
+				'cache-control': 'no-cache',
+				pragma: 'no-cache',
+				'sec-ch-ua': '"Chromium";v="104", " Not A;Brand";v="99", "Google Chrome";v="104"',
+				'sec-ch-ua-mobile': '?0',
+				'sec-ch-ua-platform': '"Windows"',
+				'sec-fetch-dest': 'empty',
+				'sec-fetch-mode': 'cors',
+				'sec-fetch-site': 'same-origin',
+				'x-requested-with': 'XMLHttpRequest',
+				cookie: OTAVA_COOKIE,
+				Referer: 'https://materiaalit.otava.fi/web/state-jurdgmztgazdamrc/61e1abdaf4480655aaa6b923',
+				'Referrer-Policy': 'strict-origin-when-cross-origin'
+			},
 			body: null,
 			method: 'GET'
 		}
