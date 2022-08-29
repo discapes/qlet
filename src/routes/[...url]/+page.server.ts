@@ -1,7 +1,7 @@
 import { OTAVA_COOKIE, OTAVA_REST_URL } from '$env/static/private';
 import type { PageServerLoad } from './$types';
 
-export const prerender = true;
+export const prerender = false;
 
 export const load: PageServerLoad = async ({ params }) => {
 	let list;
@@ -106,12 +106,12 @@ function legitFetchQuizlet(url: string) {
 			'sec-fetch-mode': 'navigate',
 			'sec-fetch-site': 'none',
 			'sec-fetch-user': '?1',
-			'upgrade-insecure-requests': '1'
+			'upgrade-insecure-requests': '1',
+			cookie:
+				'set_num_visits_per_set=3; qi5=c4founvagz52%3Ac9XGah-h.jNjnxEJorsV; fs=rhdjey; akv=%7B%7D; qtkn=VnaGK95fMpvfXCSU4Y7PpS; app_session_id=1de032a7-9dbc-4740-9aed-afd846725321; __cf_bm=YgA902I7qPOlzDbFwg9BAEAk7fVn_0oJZgSmlLZSPKI-1661789082-0-Af11n9oKAsnnb3uwVxkcRCsB1ZIODZJXfKXGFFhBQWHuPaJK+I4Va/laQNNWqUe4oy5YIsMdqiVh84bg218afqQ=; __cfruid=ca3924ccf585cc743f460498514545c029e15ee7-1661789082; _cfuvid=3MdmTDCUNrVcjPnGAzqpgCbwqfuy7G8pjZCyIpofJAk-1661789082259-0-604800000; qmeasure__persistence=%7B%2228%22%3A%2200001000%22%2C%2227%22%3A%2200000001%22%2C%2210%22%3A%2200000001%22%2C%2229%22%3A%2200100000%22%7D; session_landing_page=Sets%2Fshow; _gcl_au=1.1.93397992.1661789086; hide-fb-button=0; afUserId=a9fa1863-a31a-457d-bc9b-37b42e0dd155-p; AF_SYNC=1661789087772; _lr_geo_location=FI; OptanonAlertBoxClosed=2022-08-29T16:04:56.041Z; eupubconsent-v2=CPedmkgPedmkgAcABBENCeCgAP_AAH_AACiQI9tf_X__b2_j-_5_f_t0eY1P9_7__-0zjhfdl-8N3f_X_L8X52M7vF36pq4KuR4Eu3LBIQdlHOHcTUmw6okVrzPsbk2cr7NKJ7PEmnMbOydYGH9_n1_z-ZKY7_____7z_v-v___3____7-3f3__p_3_-__e_V_99zfn9_____9vP___9v-_9__________3_74I9gEmGrcQBdmWODNtGEUCIEYVhIdQKACigGFogMIHVwU7K4CfWELABAKEJwIgQ4gowYBAAIJAEhEQEgR4IBEARAIAAQAKgEIAGNgEFgBYGAQACgGhYoxQBCBIQZEBEUpgQFSJBQb2VCCUHehphCHWeAFBo_4qEBGsgYrAyEhYOQ4IkBLxZIHmKN8gBGCFAKJUIAAAA.f_gAD_gAAAAA; embedded-consent=Mon, 29 Aug 2022 16:04:56 GMT; _ga=GA1.2.2077994941.1661789096; _gid=GA1.2.1716608193.1661789097; _gat_UA-1203987-1=1; __gads=ID=5b529f049eb1efd3:T=1661789097:S=ALNI_MYjkGSUMvNWrFiVckzqz2B58hHrag; _fbp=fb.1.1661789097684.1405997038; OptanonConsent=isGpcEnabled=0&datestamp=Mon+Aug+29+2022+19%3A05%3A10+GMT%2B0300+(Eastern+European+Summer+Time)&version=6.34.0&isIABGlobal=false&hosts=&consentId=072c67dd-3359-4b60-8d7b-c261e02a281c&interactionCount=2&landingPath=NotLandingPage&groups=C0001%3A1%2CC0002%3A1%2CC0004%3A1%2CN01%3A1%2CSTACK42%3A1&geolocation=FI%3B19&AwaitingReconsent=false'
 		},
 		referrerPolicy: 'strict-origin-when-cross-origin',
 		body: null,
-		method: 'GET',
-		mode: 'cors',
-		credentials: 'omit'
+		method: 'GET'
 	});
 }

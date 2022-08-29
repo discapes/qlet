@@ -30,7 +30,7 @@
 				<input type="checkbox" on:change={onHideFi} /> <b>suomi</b>
 			</div>
 			<div class="bg-white/80 p-1 rounded">
-				<input type="checkbox" on:change={onHideSv} /> <b>>svenska</b>
+				<input type="checkbox" on:change={onHideSv} /> <b>svenska</b>
 			</div>
 			{#each list as word, i}
 				<div
