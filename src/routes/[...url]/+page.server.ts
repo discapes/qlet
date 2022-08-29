@@ -51,7 +51,10 @@ async function getOtava(url: string) {
 }
 
 async function getQuizlet(url: string) {
-	const rawText = await legitFetchQuizlet(url + '/').then((res) => res.text());
+	const rawText = <string>await legitFetchQuizlet(url + '/')
+		.then((res) => res.text())
+		.catch((e) => console.error(e));
+	console.log('received response : ' + rawText);
 	const t1 = rawText.slice(
 		rawText.indexOf(`<div class="SetPageTerms-termsList">`),
 		rawText.indexOf(`<div class="SetPage-setLinksWrapper">`)
