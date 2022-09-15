@@ -40,7 +40,7 @@
 							: 'bg-lime-300'
 						: ''}"
 				>
-					<input type="checkbox" bind:checked={word.fi.q} />
+					<input tabindex="-1" type="checkbox" bind:checked={word.fi.q} />
 					{#if word.fi.q}
 						<input
 							class="bg-transparent w-full"
@@ -60,7 +60,7 @@
 							: 'bg-lime-300'
 						: ''}"
 				>
-					<input type="checkbox" bind:checked={word.sv.q} />
+					<input tabindex="-1" type="checkbox" bind:checked={word.sv.q} />
 					{#if word.sv.q}
 						<input
 							class="bg-transparent w-full"
